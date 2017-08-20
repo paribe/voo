@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Cadastro de Voo</title>
+</h:head>
+<body>
+
+
+
+<h:form>
+     
+     <h1>Cadastro de Voo</h1>
+     
+    <p:messages autoUpdate="true" closable="true" />
+    
+	<p:panelGrid columns="2">
+	
+	  <p:outputLabel value="Tripulante:"/>
+	  <h:selectOneListbox value="#{voo.varTripulante}">
+   			<f:selectItems value="#{voo.varTripulanteValue}" />
+   		</h:selectOneListbox>
+	  <p:outputLabel value="Nave:"/>
+	  <h:selectOneListbox value="#{voo.varNave}">
+   			<f:selectItems value="#{voo.varNaveValue}" />
+   		</h:selectOneListbox>
+	  
+	  <p:outputLabel value="Planeta:"/>
+	  <h:selectOneListbox value="#{voo.varPlaneta}">
+   			<f:selectItems value="#{voo.varPlanetaValue}" />
+   		</h:selectOneListbox>
+	  
+	</p:panelGrid>
+    
+    <p:commandButton id="salvar" value="Criar Voo" actionListener="#{voo.adicionaVoo}"> 
+    </p:commandButton>  
+</h:form>
+
+</body>
+</html>
